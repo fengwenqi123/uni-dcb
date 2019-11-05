@@ -1,0 +1,166 @@
+{
+	"pages": [{
+			"path": "pages/login",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
+		},
+		{
+			"path": "pages/business/confirmed/confirmed",
+			"style": {
+				"disableScroll": true,
+				"navigationBarTitleText": "已确认"
+			}
+		},
+		{
+			"path": "pages/user/order",
+			"style": {
+				"disableScroll": true
+			}
+
+		},
+		{
+			"path": "pages/business/eat/eat",
+			"style": {
+				"disableScroll": true,
+				"navigationBarTitleText": "已就餐"
+			}
+		},
+		{
+			"path": "pages/business/unConfirmed/unConfirmed",
+			"style": {
+				"disableScroll": true,
+				"navigationBarTitleText": "待确认"
+			}
+		},
+		{
+			"path": "pages/business/cancel/cancel",
+			"style": {
+				"disableScroll": true, // 禁止滚动, 解决scroll-view在Android小程序卡顿的问题
+				"navigationBarTitleText": "已取消"
+			}
+		},
+		{
+			"path": "pages/user/goods",
+			"style": {
+				"navigationBarTitleText": "菜单"
+			}
+		},
+		{
+			"path": "pages/user/search",
+			"style": {
+				"navigationBarTitleText": "搜索"
+			}
+		},
+		{
+			"path": "pages/user/custom"
+		},
+		{
+			"path": "pages/business/over/over",
+			"style": {
+				"disableScroll": true,
+				"navigationBarTitleText": "已结束"
+			}
+		},
+		{
+			"path": "pages/user/orderDetails"
+		},
+		{
+			"path": "pages/user/confirmOrder",
+			"style": {
+				"navigationBarTitleText": "确认订单"
+			}
+		},
+		{
+			"path": "pages/user/remarks",
+			"style": {
+				"navigationBarTitleText": "备注"
+			}
+		},
+		{
+			"path": "pages/business/unConfirmed/details"
+		},
+		{
+			"path": "pages/business/confirmed/details"
+		},
+		{
+			"path": "pages/business/eat/details"
+		},
+		{
+			"path": "pages/business/over/details"
+		},
+		{
+			"path": "pages/business/cancel/details"
+		}
+	],
+	"tabBar": {
+		"color": "#7a7e83",
+		"selectedColor": "#0faeff",
+		"backgroundColor": "#ffffff",
+		"list": [{
+				"pagePath": "pages/business/cancel/cancel",
+				"text": "已取消",
+				"iconPath": "static/default/cancel.png",
+				"selectedIconPath": "static/select/cancel.png"
+			},
+			{
+				"pagePath": "pages/business/unConfirmed/unConfirmed",
+				"text": "待确认",
+				"iconPath": "static/default/unConfirmed.png",
+				"selectedIconPath": "static/select/unConfirmed.png"
+			},
+			{
+				"pagePath": "pages/business/confirmed/confirmed",
+				"text": "已确认",
+				"iconPath": "static/default/confirmed.png",
+				"selectedIconPath": "static/select/confirmed.png"
+			},
+			{
+				"pagePath": "pages/business/eat/eat",
+				"text": "已就餐",
+				"iconPath": "static/default/eat.png",
+				"selectedIconPath": "static/select/eat.png"
+			},
+			{
+				"pagePath": "pages/business/over/over",
+				"text": "已结束",
+				"iconPath": "static/default/over.png",
+				"selectedIconPath": "static/select/over.png"
+			}
+		]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarBackgroundColor": "#007AFF",
+		"backgroundColor": "#fbf9fe",
+		"navigationStyle": "default",
+		"usingComponents": {
+			//这里为方便，全局引入了所有组件，也可以在某个page下单独引用某个组件
+			"van-button": "/wxcomponents/vant-weapp/button/index",
+			"van-picker": "/wxcomponents/vant-weapp/picker/index",
+			"van-icon": "/wxcomponents/vant-weapp/icon/index",
+			"van-nav-bar": "/wxcomponents/vant-weapp/nav-bar/index",
+			"van-tab": "/wxcomponents/vant-weapp/tab/index",
+			"van-tabs": "/wxcomponents/vant-weapp/tabs/index",
+			"van-panel": "/wxcomponents/vant-weapp/panel/index",
+			"van-field": "/wxcomponents/vant-weapp/field/index",
+			"van-action-sheet": "/wxcomponents/vant-weapp/action-sheet/index",
+			"van-dialog": "/wxcomponents/vant-weapp/dialog/index",
+			"van-toast": "/wxcomponents/vant-weapp/toast/index",
+			"van-cell": "/wxcomponents/vant-weapp/cell/index",
+			"van-cell-group": "/wxcomponents/vant-weapp/cell-group/index",
+			"van-search": "/wxcomponents/vant-weapp/search/index",
+			"van-datetime-picker": "/wxcomponents/vant-weapp/datetime-picker/index",
+			"van-popup": "/wxcomponents/vant-weapp/popup/index",
+			"van-notice-bar": "/wxcomponents/vant-weapp/notice-bar/index"
+		}
+	},
+	"condition": { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式（list 的索引项）
+		"list": [{
+			"name": "order", //模式名称
+			"path": "pages/user/goods", //启动页面，必选
+			"query": "" //启动参数，在页面的onLoad函数里面得到。
+		}]
+	}
+}

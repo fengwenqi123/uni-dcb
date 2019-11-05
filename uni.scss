@@ -1,0 +1,175 @@
+// * {
+//   font-size: 30px;
+// }
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+	margin: 0;
+	padding: 0;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+	font: 12px/1.5tahoma, arial, \5b8b\4f53;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 100%;
+}
+
+address,
+cite,
+dfn,
+em,
+i,
+var {
+	font-style: normal;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: couriernew, courier, monospace;
+}
+
+// small {
+//   font-size: 12px;
+// }
+
+ul,
+ol {
+	list-style: none;
+}
+
+li {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+sup {
+	vertical-align: text-top;
+}
+
+sub {
+	vertical-align: text-bottom;
+}
+
+legend {
+	color: #000;
+}
+
+fieldset,
+img {
+	border: 0;
+}
+
+button,
+input,
+select,
+textarea {
+	font-size: 100%;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body,
+html {
+	line-height: 1;
+	font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif, 'Droid Sans Fallback';
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	// background: $color-background;
+	// color: $color-text;
+}
+
+.orderList .mescroll-uni-fixed {
+	position: absolute;
+	z-index: 0;
+}
+// .header .cu-custom,
+// .header .cu-custom .cu-bar {
+// 	// height: 100rpx !important;
+// 	background-color: #0081ff;
+// }
+// .header .cu-bar .content {
+// 	// text-align: center;
+// 	// font-weight: 700;
+// 	// font-size: 34rpx;
+// }
+// .header .cu-bar .action .cuIcon-back {
+// 	font-size: 45rpx;
+// }
+
+// .status_bar {
+// 	height: var(--status-bar-height);
+// 	width: 100%;
+// 	background: #007aff;
+// }
+
+// .van-nav-bar {
+// 	padding: 0 !important;
+// 	background: #007aff !important;
+// 	color: #fff !important;
+// }
+// .container {
+// 	width: 100%;
+// }
+// .van-icon-plus {
+// 	top: 6px !important;
+// }
+// .van-icon-photo-o {
+// 	width: 80rpx;
+// 	height: 80rpx;
+// 	color: #888 !important;
+// 	font-size: 60rpx !important;
+// 	z-index: 999999999;
+// }
+
+// .van-nav-bar__left {
+// 	font-size: 50rpx !important;
+// 	color: #fff;
+// }
+// .van-nav-bar__right {
+// 	font-size: 55rpx !important;
+// }

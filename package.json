@@ -1,0 +1,23 @@
+{
+  "name": "uni-ehy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "flyio": "^0.6.14",
+    "mescroll-uni": "^1.1.60",
+    "mpvue-citypicker": "^1.0.6",
+    "mpvue-picker": "^2.1.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/fengwenqi/uni-ehy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

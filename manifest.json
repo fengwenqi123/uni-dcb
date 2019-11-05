@@ -1,0 +1,216 @@
+{
+<<<<<<< HEAD
+    "name" : "点餐宝",
+    "appid" : "__UNI__3D5DF0F",
+    "description" : "华是点餐宝",
+    "versionName" : "1.0.0",
+    "versionCode" : "100",
+=======
+    "name" : "e航运",
+    "appid" : "__UNI__6A80F3D",
+    "description" : "登录模板",
+    "versionName" : "1.0.08201459",
+    "versionCode" : 127,
+>>>>>>> 34ec3cd70a95d423f001f29e2c8d8ea0f4cd2f01
+    "transformPx" : false,
+    /* 5+App特有相关 */
+    "app-plus" : {
+        "usingComponents" : true,
+        /* 模块配置 */
+        "modules" : {
+            "Maps" : {}
+        },
+        /* 应用发布信息 */
+        "distribute" : {
+            /* android打包配置 */
+            "android" : {
+                "permissions" : [
+                    "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>",
+                    "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+                    "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+                    "<uses-permission android:name=\"android.permission.CAMERA\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
+                    "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>",
+                    "<uses-permission android:name=\"android.permission.INTERNET\"/>",
+                    "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+                    "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
+                    "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+                    "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
+                ]
+            },
+            /* ios打包配置 */
+<<<<<<< HEAD
+            "ios" : {},
+=======
+            "ios" : {
+                "privacyDescription" : {
+                    "NSLocationWhenInUseUsageDescription" : "获取定位信息用于为用户提供附近的天气信息",
+                    "NSLocationAlwaysUsageDescription" : "获取定位信息用于为用户提供附近的天气信息",
+                    "NSLocationAlwaysAndWhenInUseUsageDescription" : "获取定位信息用于为用户提供附近的天气信息",
+                    "NSPhotoLibraryUsageDescription" : "获取相册信息用于为用户上传头像",
+                    "NSCameraUsageDescription" : "获取相册信息用于为用户拍照上传头像和扫描二维码"
+                }
+            },
+>>>>>>> 34ec3cd70a95d423f001f29e2c8d8ea0f4cd2f01
+            /* SDK配置 */
+            "sdkConfigs" : {
+                "maps" : {
+                    "amap" : {
+                        "appkey_ios" : "d2262f8a65b4c6f0e9ef59f792efa6d7",
+                        "appkey_android" : ""
+                    }
+                }
+            },
+            "icons" : {
+                "ios" : {
+                    "iphone" : {
+<<<<<<< HEAD
+                        "app@2x" : "/Users/zxy/Desktop/新建文件夹/icon/120X120.png",
+                        "app@3x" : "/Users/zxy/Desktop/新建文件夹/icon/180X180.png",
+                        "spotlight@2x" : "/Users/zxy/Desktop/新建文件夹/icon/80X80.png",
+                        "spotlight@3x" : "/Users/zxy/Desktop/新建文件夹/icon/120X120.png",
+                        "notification@2x" : "/Users/zxy/Desktop/新建文件夹/icon/40X40.png",
+                        "notification@3x" : "/Users/zxy/Desktop/新建文件夹/icon/60X60.png",
+                        "settings@2x" : "/Users/zxy/Desktop/新建文件夹/icon/58X58.png",
+                        "settings@3x" : "/Users/zxy/Desktop/新建文件夹/icon/87X87.png"
+                    },
+                    "appstore" : "",
+                    "ipad" : {
+                        "app" : "",
+                        "app@2x" : "",
+                        "notification" : "",
+                        "notification@2x" : "",
+                        "proapp@2x" : "",
+                        "settings" : "",
+                        "settings@2x" : "",
+                        "spotlight" : "",
+                        "spotlight@2x" : ""
+                    }
+                },
+                "android" : {
+                    "hdpi" : "",
+                    "xhdpi" : "",
+                    "xxhdpi" : "",
+                    "xxxhdpi" : ""
+=======
+                        "app@2x" : "unpackage/res/icons/120x120.png",
+                        "app@3x" : "unpackage/res/icons/180x180.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png",
+                        "spotlight@3x" : "unpackage/res/icons/120x120.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "notification@3x" : "unpackage/res/icons/60x60.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "settings@3x" : "unpackage/res/icons/87x87.png"
+                    },
+                    "appstore" : "unpackage/res/icons/1024x1024.png",
+                    "ipad" : {
+                        "app" : "unpackage/res/icons/76x76.png",
+                        "app@2x" : "unpackage/res/icons/152x152.png",
+                        "notification" : "unpackage/res/icons/20x20.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "proapp@2x" : "unpackage/res/icons/167x167.png",
+                        "settings" : "unpackage/res/icons/29x29.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "spotlight" : "unpackage/res/icons/40x40.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png"
+                    }
+                },
+                "android" : {
+                    "hdpi" : "unpackage/res/icons/72x72.png",
+                    "xhdpi" : "unpackage/res/icons/96x96.png",
+                    "xxhdpi" : "unpackage/res/icons/144x144.png",
+                    "xxxhdpi" : "unpackage/res/icons/192x192.png"
+>>>>>>> 34ec3cd70a95d423f001f29e2c8d8ea0f4cd2f01
+                }
+            },
+            "splashscreen" : {
+                "ios" : {
+                    "iphone" : {
+<<<<<<< HEAD
+                        "portrait-896h@3x" : "/Users/zxy/Desktop/新建文件夹/1242X2688.png",
+                        "landscape-896h@3x" : "",
+                        "portrait-896h@2x" : "/Users/zxy/Desktop/新建文件夹/828X1792.png",
+                        "retina55" : "/Users/zxy/Desktop/新建文件夹/1242X2208.png",
+                        "retina55l" : "",
+                        "iphonexl" : "",
+                        "iphonex" : "/Users/zxy/Desktop/新建文件夹/1125X2436.png",
+                        "retina47" : "/Users/zxy/Desktop/新建文件夹/750X1334.png",
+                        "retina40" : "/Users/zxy/Desktop/新建文件夹/640X1136.png",
+                        "retina35" : "/Users/zxy/Desktop/新建文件夹/640X960.png"
+=======
+                        "portrait-896h@3x" : "/Users/zxy/Documents/ios/icon/1242X2688.png",
+                        "landscape-896h@3x" : "",
+                        "portrait-896h@2x" : "/Users/zxy/Documents/ios/icon/828X1792.png",
+                        "retina55" : "/Users/zxy/Documents/ios/icon/1242X2208.png",
+                        "retina55l" : "",
+                        "iphonexl" : "",
+                        "iphonex" : "/Users/zxy/Documents/ios/icon/1125X2436.png",
+                        "retina47" : "/Users/zxy/Documents/ios/icon/750X1334.png",
+                        "retina40" : "/Users/zxy/Documents/ios/icon/640X1136.png",
+                        "retina35" : "/Users/zxy/Documents/ios/icon/640X960.png"
+>>>>>>> 34ec3cd70a95d423f001f29e2c8d8ea0f4cd2f01
+                    }
+                },
+                "android" : {
+                    "hdpi" : ""
+                }
+            }
+        },
+        "splashscreen" : {
+            "waiting" : true,
+            "alwaysShowBeforeRender" : true
+        }
+    },
+    /* 快应用特有相关 */
+    "quickapp" : {},
+    /* 小程序特有相关 */
+    "mp-weixin" : {
+<<<<<<< HEAD
+        "appid" : "wx73fc5fc60bab600d",
+        "setting" : {
+            "urlCheck" : false,
+            "es6" : true,
+            "postcss" : true
+        },
+        "usingComponents" : true,
+        "permission" : {
+            "scope.userLocation" : {
+                "desc" : "https://api.cjbe88.com"
+            }
+        }
+=======
+        "appid" : "",
+        "setting" : {
+            "urlCheck" : false
+        },
+        "usingComponents" : true
+>>>>>>> 34ec3cd70a95d423f001f29e2c8d8ea0f4cd2f01
+    },
+    "mp-alipay" : {
+        "usingComponents" : true
+    },
+    "mp-baidu" : {
+        "usingComponents" : true
+    },
+    "mp-toutiao" : {
+        "usingComponents" : true
+    }
+}
