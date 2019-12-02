@@ -73,19 +73,13 @@
 				</div>
 				<div class="orderInfo items">
 					<div class="orderTitle">订单信息</div>
-					<ul>
-						<li>
-							<div class="item">
-								<van-cell-group style="width: 100%;">
-									<van-cell title="订单号" :value="goodsInfo.id" />
-									<van-cell title="就餐时间" :value="goodsInfo.dinnerTimeString" />
-									<van-cell title="就餐人数" :value="goodsInfo.dinnerNumber" />
-									<van-cell title="订单备注" :value="goodsInfo.description" />
-									<van-cell title="下单时间" :value="goodsInfo.addTimeString" />
-								</van-cell-group>
-							</div>
-						</li>
-					</ul>
+					<van-cell-group style="width: 100%;">
+						<van-cell title="订单号" :value="goodsInfo.id" />
+						<van-cell title="就餐时间" :value="goodsInfo.dinnerTimeString" />
+						<van-cell title="就餐人数" :value="goodsInfo.dinnerNumber" />
+						<van-cell title="订单备注" :value="goodsInfo.description" />
+						<van-cell title="下单时间" :value="goodsInfo.addTimeString" />
+					</van-cell-group>
 				</div>
 			</div>
 		</scroll-view>
@@ -108,9 +102,6 @@ import { editOrderWithCook, editOrderActive } from '@/api/order';
 import Toast from '@/wxcomponents/vant-weapp/toast/toast';
 export default {
 	name: 'orderDetails',
-	config: {
-		navigationBarTitleText: '已就餐'
-	},
 	data() {
 		return {
 			goodsInfo: null,

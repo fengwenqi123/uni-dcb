@@ -63,12 +63,6 @@
 import shopCard from '@/components/goods/shopCard';
 import dot from '@/components/goods/dot';
 import { getGoodsList } from '@/api/goods.js';
-
-let foods = {
-	category: '自定义菜品',
-	type: -10,
-	foods: []
-};
 export default {
 	name: 'goods',
 	components: {
@@ -113,6 +107,11 @@ export default {
 						food.count = 0;
 					});
 				});
+				let foods = {
+					category: '自定义菜品',
+					type: -10,
+					foods: []
+				};
 				response.data.push(foods);
 				this.goods = response.data;
 				this.$store.commit('_getGoods', this.goods);

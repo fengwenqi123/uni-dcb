@@ -1,7 +1,18 @@
 <template>
 	<div class="container">
 		<div class="search"><van-search :value="value" :placeholder="placeHolder" show-action @search="onSearch" @cancel="onCancel" /></div>
-		<div class="food-list" v-if="!showCustom">
+		<div class="select-history" v-show="hisFlag">
+			<div class="title">
+				<span>搜索记录</span>
+				<span @click='deleteHistory()'>
+					<image class="delete-icon" src="../../static/images/delete.png" mode=""></image>
+				</span>
+			</div>
+			<div class="content">
+				<span v-for="(item,index) in selectHistory" :key="index" @click="clickHistory(item)">{{item}}</span>
+			</div>
+		</div>
+		<div class="food-list" v-if="showCustom===1">
 			<scroll-view scroll-y scroll-with-animation="true" class="foods-scroll-view">
 				<ul v-if="searchFoods.length > 0">
 					<li v-for="(food, index) in searchFoods" :key="index">
@@ -24,7 +35,7 @@
 				</ul>
 			</scroll-view>
 		</div>
-		<div class="show-custom" v-else>
+		<div class="show-custom" v-if="showCustom===0">
 			<div class="content">
 				<div class="img"><img :src="customImg" alt="" /></div>
 				<p class="con1">暂无搜索结果</p>
@@ -46,6 +57,7 @@ export default {
 	},
 	mounted() {
 		this.searchFoods = [];
+		this.getHistory()
 	},
 	name: 'search',
 	data() {
@@ -53,8 +65,10 @@ export default {
 			value: null,
 			placeHolder: '搜索你需要的商品热门关键词',
 			searchFoods: [],
-			showCustom: false,
-			customImg: require('@/static/images/custom-404.png')
+			showCustom: 2,
+			customImg: require('@/static/images/custom-404.png'),
+			selectHistory : [],
+			hisFlag:true
 		};
 	},
 	methods: {
@@ -64,20 +78,53 @@ export default {
 		add(index) {
 			this.searchFoods[index].count++;
 		},
-		onSearch(event) {
-			this.searchFoods = [];
+		// 获取搜索记录
+		getHistory(){
+			let selectHistory=uni.getStorageSync('select-history')
+		    this.selectHistory=selectHistory!==''?JSON.parse(selectHistory):[]
+		},
+		// 删除历史记录
+		deleteHistory(){
+			this.selectHistory=[]
+			 uni.removeStorageSync('select-history');
+		},
+		clickHistory(item){
+			this.hisFlag=false
+			this.value=item
 			let goods = this.$store.state.goods.goodsData;
 			goods.forEach(good => {
 				good.foods.forEach(food => {
-					if (food.name.indexOf(event.mp.detail) !== -1) {
+					if (food.name.indexOf(this.value) !== -1) {
 						this.searchFoods.push(food);
 					}
 				});
 			});
 			if (this.searchFoods.length === 0) {
-				this.showCustom = true;
+				this.showCustom = 0;
 			} else {
-				this.showCustom = false;
+				this.showCustom = 1;
+			}
+		},
+		onSearch(event) {
+			this.searchFoods = [];
+			this.hisFlag=false
+			  const detail=event.mp.detail
+			  if(!this.selectHistory.includes(detail)){
+				    this.selectHistory.unshift(detail)
+			  }
+			 uni.setStorageSync('select-history', JSON.stringify(this.selectHistory));
+			let goods = this.$store.state.goods.goodsData;
+			goods.forEach(good => {
+				good.foods.forEach(food => {
+					if (food.name.indexOf(detail) !== -1) {
+						this.searchFoods.push(food);
+					}
+				});
+			});
+			if (this.searchFoods.length === 0) {
+				this.showCustom = 0;
+			} else {
+				this.showCustom = 1;
 			}
 		},
 		onCancel() {
@@ -103,6 +150,31 @@ export default {
 	.search {
 		height: 108rpx;
 	}
+	.select-history{
+		padding: 0 20rpx;
+		.title{
+			display:flex;
+			justify-content: space-between;
+			align-items: center;
+			span{
+				font-size: 24rpx;
+			}
+		}
+		.content{
+			margin-top: 20rpx;
+			display: flex;
+			flex-wrap: wrap;
+			span{
+				display: block;
+				margin:7rpx 10rpx;
+				padding: 4rpx 14rpx;
+				background: rgba(220,220,220, 0.5);
+				font-size:24rpx;
+				border-radius: 8rpx;
+			}
+		}
+	}
+
 
 	.food-list {
 		position: absolute;
@@ -253,5 +325,9 @@ export default {
 			}
 		}
 	}
+}
+.delete-icon{
+	width: 40rpx;
+	height: 40rpx;
 }
 </style>

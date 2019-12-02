@@ -27,7 +27,7 @@
 					<li>
 						<div class="item">
 							<div class="content-left">订单备注</div>
-							<div class="content-right" @click="goRemarks"><input placeholder="未选择" v-model="remarks" disabled /></div>
+							<div class="content-right" @click="goRemarks"><input placeholder="口味,偏好" v-model="remarks" disabled /></div>
 						</div>
 					</li>
 				</ul>

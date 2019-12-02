@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="content">
-      <textarea placeholder="请填写忌口等备注信息" v-model="textarea" auto-focus/>
+      <textarea placeholder="请填写忌口等备注信息" v-model="textarea"/>
       <div class="marks">
         <div class="item" v-for="(item,index) in marks" :key="index" @click="onCheck(item)">
           {{item}}

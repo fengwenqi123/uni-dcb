@@ -19,9 +19,6 @@ import businessCard from '@/components/businessCard';
 import { queryCook } from '@/api/order';
 import MescrollUni from 'mescroll-uni';
 export default {
-	config: {
-		navigationBarTitleText: '已取消'
-	},
 	name: 'cancel',
 	components: {
 		businessCard,
