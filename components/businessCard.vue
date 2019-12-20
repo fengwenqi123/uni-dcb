@@ -6,7 +6,7 @@
           v-if="goodsInfo.map.normalList.length>0"
           class="images"
           :mode='mode'
-          :src='goodsInfo.map.normalList[0].image'
+          :src="goodsInfo.map.normalList[0].image + '?type=small'"
         ></image>
       </div>
       <div class="info">

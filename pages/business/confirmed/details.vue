@@ -7,7 +7,7 @@
 					<ul>
 						<li v-for="(item, index) in goodsInfo.map.normalList" :key="index">
 							<div class="item" v-if="item.status !== 4">
-								<div class="img"><image :src="item.image" class="imgs"></image></div>
+								<div class="img"><image :src="item.image + '?type=small'" class="imgs"></image></div>
 								<div class="name">{{ item.dishName }}</div>
 								<div class="num">x{{ item.dishCount }}</div>
 								<div class="price">￥{{ item.dishPrice }}</div>
@@ -37,7 +37,7 @@
 					<ul>
 						<li v-for="(item, index) in goodsInfo.map.addList" :key="index">
 							<div class="item">
-								<div class="img"><image :src="src" class="imgs"></image></div>
+								<div class="img"><image :src="src + '?type=small'" class="imgs"></image></div>
 								<div class="name">{{ item.dishName }}</div>
 								<div class="num">x{{ item.dishCount }}</div>
 								<div class="price">￥{{ item.dishPrice }}</div>

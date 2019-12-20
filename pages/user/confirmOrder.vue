@@ -38,7 +38,7 @@
 					<li v-for="(food, index) in selectFoods" :key="index">
 						<div class="custom" v-if="food.type === -1">自定义菜品</div>
 						<div class="item">
-							<div class="img"><img :src="food.image" alt="" /></div>
+							<div class="img"><img :src="food.picture + '?type=small'" alt="" /></div>
 							<div class="food-name">{{ food.name }}</div>
 							<div class="number">x{{ food.count }}</div>
 							<div class="price">
@@ -63,7 +63,8 @@
 							<span>¥{{ totalPrice }}</span>
 						</p>
 					</div>
-					<div class="btn"><button class="check" @click="submit">确认订单</button></div>
+					<div class="btn"><button v-if="flag" class="check" @click="submit">确认订单</button>
+					<button class="check" v-else>确认订单</button></div>
 				</div>
 			</div>
 		</div>
@@ -96,7 +97,8 @@ export default {
 			maxDate: new Date().getTime() + 3600 * 24 * 7 * 1000,
 			currentDate: new Date().getTime(),
 			show: false,
-			img: require('@/static/images/plate.png')
+			img: require('@/static/images/plate.png'),
+			flag:true
 		};
 	},
 	computed: {
@@ -104,6 +106,7 @@ export default {
 	},
 	methods: {
 		showTimeSelect() {
+			console.log(this.selectFoods)
 			this.$refs.dateTime.showPopup();
 		},
 		timeConfirm(e) {
@@ -164,6 +167,7 @@ export default {
 				remarks: this.remarks,
 				goodsList: goodsList
 			})}>`;
+			this.flag=false
 			addOrder({
 				dataList
 			}).then(response => {
@@ -181,7 +185,9 @@ export default {
 					// 	path: '/pages/user/order'
 					// });
 				}, 2000);
-			});
+			}).catch((error)=>{
+				this.flag=true
+			})
 		}
 	}
 };

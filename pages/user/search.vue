@@ -12,11 +12,12 @@
 				<span v-for="(item,index) in selectHistory" :key="index" @click="clickHistory(item)">{{item}}</span>
 			</div>
 		</div>
+		<div v-if="showCustom===2" class="add"><van-button size="large" class="submit" type="info" @click="addCustom">添加自定义菜品</van-button></div>
 		<div class="food-list" v-if="showCustom===1">
 			<scroll-view scroll-y scroll-with-animation="true" class="foods-scroll-view">
 				<ul v-if="searchFoods.length > 0">
 					<li v-for="(food, index) in searchFoods" :key="index">
-						<div class="icon"><img :src="food.icon" /></div>
+						<div class="icon"><image :src="food.picture + '?type=small'" /></div>
 						<div class="content">
 							<h2 class="name">{{ food.name }}</h2>
 							<p class="desc">{{ food.description }}</p>
@@ -33,11 +34,14 @@
 						</div>
 					</li>
 				</ul>
+				<div class="sub">
+					<van-button size="large" class="submit" type="info" @click="addCustom">添加自定义菜品</van-button>
+				</div>
 			</scroll-view>
 		</div>
 		<div class="show-custom" v-if="showCustom===0">
 			<div class="content">
-				<div class="img"><img :src="customImg" alt="" /></div>
+				<div class="img"><image :src="customImg" alt="" /></div>
 				<p class="con1">暂无搜索结果</p>
 				<p class="con2">换个关键词试试</p>
 				<p class="con3">或</p>
@@ -63,7 +67,7 @@ export default {
 	data() {
 		return {
 			value: null,
-			placeHolder: '搜索你需要的商品热门关键词',
+			placeHolder: '搜索你需要商品的关键词',
 			searchFoods: [],
 			showCustom: 2,
 			customImg: require('@/static/images/custom-404.png'),
@@ -82,11 +86,17 @@ export default {
 		getHistory(){
 			let selectHistory=uni.getStorageSync('select-history')
 		    this.selectHistory=selectHistory!==''?JSON.parse(selectHistory):[]
+			if(this.selectHistory.length>0){
+				this.hisFlag=true
+			}else{
+				this.hisFlag=false
+			}
 		},
 		// 删除历史记录
 		deleteHistory(){
 			this.selectHistory=[]
 			 uni.removeStorageSync('select-history');
+			 this.hisFlag=false
 		},
 		clickHistory(item){
 			this.hisFlag=false
@@ -145,13 +155,15 @@ export default {
 
 <style scoped lang="scss">
 .container {
-	background: #fff;
+	background: rgba(245,245,245,0.5);
 
 	.search {
 		height: 108rpx;
 	}
 	.select-history{
+		background: #fff;
 		padding: 0 20rpx;
+		padding-bottom: 10rpx;
 		.title{
 			display:flex;
 			justify-content: space-between;
@@ -186,6 +198,19 @@ export default {
 			height: 100%;
 		}
 
+.sub{
+	width: 686rpx;
+	margin: 20rpx auto;
+}
+			.submit {
+				width: 686rpx;
+				height: 94rpx;
+				border-radius: 4rpx;
+				background: rgba(16, 142, 233, 1);
+				font-size: 36rpx;
+				font-weight: 400;
+				color: rgba(255, 255, 255, 1);
+			}
 		ul {
 			width: 100%;
 			background: #fff;
@@ -197,11 +222,12 @@ export default {
 				margin-top: 32rpx;
 				position: relative;
 
+
 				.icon {
 					width: 174rpx;
 					height: 174rpx;
 
-					img {
+					image {
 						width: 100%;
 						height: 100%;
 					}
@@ -211,21 +237,21 @@ export default {
 					padding-left: 24rpx;
 
 					.name {
-						font-size: 30rpx;
+						font-size: 36rpx;
 						font-weight: 500;
 						color: rgba(51, 153, 255, 1);
 						margin: 10rpx 0;
 					}
 
 					.desc {
-						margin: 10rpx 0;
-						font-size: 26rpx;
+						margin: 22rpx 0;
+						font-size: 36rpx;
 						font-weight: 400;
 						color: rgba(153, 153, 153, 1);
 					}
 
 					.price {
-						margin: 10rpx 0;
+						margin: 22rpx 0;
 						font-size: 40rpx;
 						font-weight: 500;
 						color: rgba(250, 84, 28, 1);
@@ -233,7 +259,7 @@ export default {
 
 					.cartcontrol-wrapper {
 						position: absolute;
-						bottom: 0rpx;
+						bottom: 20rpx;
 						right: 32rpx;
 
 						.cartcontrol {
@@ -267,6 +293,7 @@ export default {
 					}
 				}
 			}
+
 		}
 	}
 
@@ -288,7 +315,7 @@ export default {
 				width: 100%;
 				height: 100%;
 
-				img {
+				image {
 					width: 200rpx;
 					height: 200rpx;
 				}
@@ -329,5 +356,9 @@ export default {
 .delete-icon{
 	width: 40rpx;
 	height: 40rpx;
+}
+.add{
+	width:700rpx;
+	margin: 280rpx auto
 }
 </style>

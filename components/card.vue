@@ -1,7 +1,7 @@
 <template>
 	<div class="components">
 		<div class="goodsInfo" @click="toDetalis">
-			<div class="imgs"><image v-if="goodsInfo.map.normalList.length > 0" class="images" :mode="mode" :src="goodsInfo.map.normalList[0].image"></image></div>
+			<div class="imgs"><image v-if="goodsInfo.map.normalList.length > 0" class="images" :mode="mode" :src="goodsInfo.map.normalList[0].image + '?type=small'"></image></div>
 			<div class="info">
 				<div class="times">
 					<p>

@@ -7,7 +7,7 @@
 					<ul>
 						<li v-for="(item, index) in normalList" :key="index">
 							<div class="item" v-if="item.status !== 4 && item.dishCount > 0">
-								<div class="img"><image :src="item.image" class="imgs"></image></div>
+								<div class="img"><image :src="item.image + '?type=small'" class="imgs"></image></div>
 								<div class="name">{{ item.dishName }}</div>
 								<div class="num">
 									<div class="cartcontrol">
@@ -24,7 +24,7 @@
 					<ul>
 						<li v-for="(item, index) in normalList" :key="index">
 							<div class="item" v-if="item.status === 4 && item.dishCount > 0">
-								<div class="img"></div>
+								<div class="img"><image class="imgs"></image></div>
 								<div class="name">{{ item.dishName }}</div>
 								<div class="num">
 									<div class="cartcontrol">
@@ -52,7 +52,7 @@
 					<ul>
 						<li v-for="(item, index) in goodsInfo.map.addList" :key="index">
 							<div class="item">
-								<div class="img"><image :src="src" class="imgs"></image></div>
+								<div class="img"><image :src="src + '?type=small'" class="imgs"></image></div>
 								<div class="name">{{ item.dishName }}</div>
 								<div class="num">x{{ item.dishCount }}</div>
 								<div class="price">￥{{ item.dishPrice }}</div>
@@ -307,7 +307,7 @@ export default {
 								text-align: right;
 
 								input {
-									width: 170rpx;
+									width: 102rpx;
 									text-align: right;
 								}
 							}

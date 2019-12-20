@@ -61,19 +61,9 @@
                   </div>
                   <div class="select">
                     <div class="cartcontrol">
-                      <div
-                        class="cart-decrease"
-                        v-if="food.count>0"
-                        @click="food.count--"
-                      ></div>
-                      <div
-                        class="cart-count"
-                        v-if="food.count>0"
-                      >{{food.count}}</div>
-                      <div
-                        class="cart-add"
-                        @click="food.count++"
-                      ></div>
+<div class="cart-decrease" v-if="food.count > 0" @click="del(index)"></div>
+													<div class="cart-count" v-if="food.count > 0">{{ food.count }}</div>
+													<div class="cart-add" @click="add(index)"></div>
                     </div>
                   </div>
                 </div>
@@ -157,6 +147,13 @@ export default {
     }
   },
   methods: {
+	  del(i) {
+		  console.log(this.selectFoods)
+	  	this.selectFoods[i].count--;
+	  },
+	  add(i) {
+	  	this.selectFoods[i].count++;
+	  },
     showPopup() {
       if (this.selectFoods.length > 0) {
         this.overlay = !this.overlay

@@ -1,8 +1,14 @@
 <template>
 	<div class="container">
+		<div class="logo">
+			<image src="../static/images/logo.png">
+			</image>
+		</div>
 		<view class="section phone"><input type="text" placeholder="用户名" placeholder-style="color:#cccccc" v-model="loginName" /></view>
 		<view class="section"><input password type="text" placeholder="密码" placeholder-style="color:#cccccc" v-model="passWord" /></view>
-		<div class="button" @click="login1"><button type="primary" size="default">登录</button></div>
+		<div class="button" @click="login1">
+			<van-button class="vbutton" round type="info" size="large">登录</van-button>
+		</div>
 	</div>
 </template>
 
@@ -92,13 +98,22 @@ export default {
 
 <style scoped lang="scss">
 .container {
+	background: #fff;
+	.logo{
+		text-align: center;
+		image{
+			width: 240rpx;
+			height:240rpx;
+			margin:108rpx 0 96rpx 0;
+		}
+	}
 	.section {
 		height: 104rpx;
 		display: flex;
 		align-items: center;
 		background: rgba(255, 255, 255, 1);
 		padding-left: 40rpx;
-
+border-bottom: 1rpx solid #eeeeee;
 		input {
 			width: 100%;
 			height: 100%;
@@ -110,10 +125,9 @@ export default {
 	}
 
 	.button {
-		margin: 24rpx auto;
+		margin: 140rpx auto;
 		width: 686rpx;
 		height: 88rpx;
-		border-radius: 4rpx;
 	}
 }
 </style>

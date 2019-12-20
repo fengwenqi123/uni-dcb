@@ -31,7 +31,7 @@
 								<h1 id="title" class="title">{{ item.category }}</h1>
 								<ul class="foods-ul-child">
 									<li v-for="(food, index) in item.foods" class="food-list-hook foods-li-child" :key="index">
-										<div class="icon"><img :src="food.picture" /></div>
+										<div class="icon"><img :src="food.picture + '?type=small'" /></div>
 										<div class="content">
 											<h2 class="name">{{ food.name }}</h2>
 											<p class="desc">{{ food.description || '暂无描述' }}</p>
@@ -257,8 +257,8 @@ export default {
 									.desc {
 										font-size: 26rpx;
 										font-weight: 400;
-										margin-top: 14rpx;
-										margin-bottom: 6rpx;
+										margin-top: 21rpx;
+										margin-bottom: 21rpx;
 										color: rgba(153, 153, 153, 1);
 									}
 
